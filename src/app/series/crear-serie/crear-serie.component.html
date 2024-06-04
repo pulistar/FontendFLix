@@ -1,0 +1,73 @@
+<div id="crear" class="container-fluid">
+    <div class="col-lg-6 offset-lg-3">
+        <header class="text-center mb-4">
+            <h3 class="titulo-formulario">Nueva Serie</h3>
+        </header>
+        <section class="container">
+            <form [formGroup]="seriesForm" (ngSubmit)="!seriesForm.invalid && crearSerie(seriesForm.value)">
+                <div class="row">
+                    <div class="col col-12">
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input id="url" class="form-control" formControlName="url" maxlength="500" placeholder="url" />
+                            <div class="alert alert-danger mt-2" *ngIf="seriesForm.get('url')!.hasError('required') && seriesForm.get('url')!.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input id="titulo" class="form-control" formControlName="titulo" maxlength="100" placeholder="Ingrese el Título" />
+                            <div class="alert alert-danger mt-2" *ngIf="seriesForm.get('titulo')?.errors?.['required'] && seriesForm.get('titulo')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input id="sinopsis" class="form-control" formControlName="sinopsis" maxlength="100" placeholder="Ingrese la Sinopsis" />
+                            <div class="alert alert-danger mt-2" *ngIf="seriesForm.get('sinopsis')?.errors?.['required'] && seriesForm.get('sinopsis')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input id="genero" class="form-control" formControlName="genero" maxlength="100" placeholder="Ingrese el Género" />
+                            <div class="alert alert-danger mt-2" *ngIf="seriesForm.get('genero')?.errors?.['required'] && seriesForm.get('genero')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input id="director" class="form-control" formControlName="director" maxlength="100" placeholder="Ingrese el Director" />
+                            <div class="alert alert-danger mt-2" *ngIf="seriesForm.get('director')?.errors?.['required'] && seriesForm.get('director')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input id="actores" class="form-control" formControlName="actores" maxlength="100" placeholder="Ingrese los Actores" />
+                            <div class="alert alert-danger mt-2" *ngIf="seriesForm.get('actores')?.errors?.['required'] && seriesForm.get('actores')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input type="date" id="fecha_estreno" class="form-control" formControlName="fecha_estreno" placeholder="Ingrese la Fecha de Estreno" />
+                            <div class="alert alert-danger mt-2" *ngIf="seriesForm.get('fecha_estreno')?.errors?.['required'] && seriesForm.get('fecha_estreno')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input type="number" id="temporada" class="form-control" formControlName="temporada" maxlength="5" placeholder="Ingrese la temporada" />
+                            <div class="alert alert-danger mt-2" *ngIf="seriesForm.get('temporada')?.errors?.['required'] && seriesForm.get('temporada')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input type="number" id="duracion" class="form-control" formControlName="duracion" maxlength="5" placeholder="Ingrese la Duración" />
+                            <div class="alert alert-danger mt-2" *ngIf="seriesForm.get('duracion')?.errors?.['required'] && seriesForm.get('duracion')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="text-center">
+                    <button type="submit" class="btn btn-crear" [disabled]="!seriesForm.valid">Crear</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

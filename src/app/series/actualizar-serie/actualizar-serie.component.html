@@ -1,0 +1,75 @@
+<div id="crear" class="container-fluid">
+  <div class="col-lg-6 offset-lg-3">
+    <header class="text-center mb-4">
+      <h3 class="titulo-formulario">Actualizar serie</h3>
+    </header>
+    <section class="container">
+      <form [formGroup]="serieForm" (ngSubmit)="!serieForm.invalid && actualizarSerie()">
+        <div class="row">
+          <div class="col col-12">
+
+            <div class="form-group mx-sm-3 mb-2 input-reducido">
+              <input id="url" class="form-control" formControlName="url" maxlength="500" placeholder="url" />
+              <div class="alert alert-danger mt-2" *ngIf="serieForm.get('url')!.hasError('required') && serieForm.get('url')!.touched">
+                  Campo Requerido
+              </div>
+          </div>
+            <div class="form-group mx-sm-3 mb-2 input-reducido">
+              <input id="titulo" class="form-control" formControlName="titulo" maxlength="100" placeholder="Ingrese el Título" />
+              <div class="alert alert-danger mt-2" *ngIf="serieForm.get('titulo')?.errors?.['required'] && serieForm.get('titulo')?.touched">
+                Campo Requerido
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-2 input-reducido">
+              <input id="sinopsis" class="form-control" formControlName="sinopsis" maxlength="100" placeholder="Ingrese la Sinopsis" />
+              <div class="alert alert-danger mt-2" *ngIf="serieForm.get('sinopsis')?.errors?.['required'] && serieForm.get('sinopsis')?.touched">
+                Campo Requerido
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-2 input-reducido">
+              <input id="genero" class="form-control" formControlName="genero" maxlength="100" placeholder="Ingrese el Género" />
+              <div class="alert alert-danger mt-2" *ngIf="serieForm.get('genero')?.errors?.['required'] && serieForm.get('genero')?.touched">
+                Campo Requerido
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-2 input-reducido">
+              <input id="director" class="form-control" formControlName="director" maxlength="100" placeholder="Ingrese el Director" />
+              <div class="alert alert-danger mt-2" *ngIf="serieForm.get('director')?.errors?.['required'] && serieForm.get('director')?.touched">
+                Campo Requerido
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-2 input-reducido">
+              <input id="actores" class="form-control" formControlName="actores" maxlength="100" placeholder="Ingrese los Actores" />
+              <div class="alert alert-danger mt-2" *ngIf="serieForm.get('actores')?.errors?.['required'] && serieForm.get('actores')?.touched">
+                Campo Requerido
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-2 input-reducido">
+              <input type="date" id="fecha_estreno" class="form-control" formControlName="fecha_estreno" placeholder="Ingrese la Fecha de Estreno" />
+              <div class="alert alert-danger mt-2" *ngIf="serieForm.get('fecha_estreno')?.errors?.['required'] && serieForm.get('fecha_estreno')?.touched">
+                Campo Requerido
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-2 input-reducido">
+              <input type="number" id="temporada" class="form-control" formControlName="temporada" maxlength="5" placeholder="Ingrese la temporada" />
+              <div class="alert alert-danger mt-2" *ngIf="serieForm.get('temporada')?.errors?.['required'] && serieForm.get('temporada')?.touched">
+                Campo Requerido
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-2 input-reducido">
+              <input type="number" id="duracion" class="form-control" formControlName="duracion" maxlength="5" placeholder="Ingrese la Duración" />
+              <div class="alert alert-danger mt-2" *ngIf="serieForm.get('duracion')?.errors?.['required'] && serieForm.get('duracion')?.touched">
+                Campo Requerido
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="text-center">
+          <button type="submit" class="btn btn-crear" [disabled]="!serieForm.valid">Actualizar</button>
+        
+        </div>
+      </form>
+    </section>
+  </div>
+</div>

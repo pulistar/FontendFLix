@@ -1,0 +1,57 @@
+#listar {
+    background-color: rgb(0, 17, 42);
+    min-height: 100vh; 
+}
+
+#titulo {
+    color: tomato;
+    text-align: center;
+    margin-top: 40px; 
+    font-weight: bold; 
+}
+.image-container {
+    height: 600px;
+    overflow: hidden;
+}
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie-card {
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid white; 
+    background: rgb(130, 130, 130)
+}
+
+.card-body {
+    margin-bottom: 0;
+}
+
+.extra-info {
+    display: none;
+}
+
+.read-more {
+    margin-top: 10px;
+}
+
+.button-group {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.home-btn {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.create-movie-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}

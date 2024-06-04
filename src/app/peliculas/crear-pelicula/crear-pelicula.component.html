@@ -1,0 +1,68 @@
+<div id="crear" class="container-fluid">
+    <div class="col-lg-6 offset-lg-3">
+        <header class="text-center mb-4">
+            <h3 class="titulo-formulario">Nueva Película</h3>
+        </header>
+        <section class="container">
+            <form [formGroup]="peliculasForm" (ngSubmit)="!peliculasForm.invalid && crearPelicula(peliculasForm.value)">
+                <div class="row">
+                    <div class="col col-12">
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            
+                            <input id="url" class="form-control" formControlName="url" maxlength="500" placeholder="url" />
+                            <div class="alert alert-danger mt-2" *ngIf="peliculasForm.get('url')!.hasError('required') && peliculasForm.get('url')!.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input id="titulo" class="form-control" formControlName="titulo" maxlength="100" placeholder="Ingrese el Título" />
+                            <div class="alert alert-danger mt-2" *ngIf="peliculasForm.get('titulo')?.errors?.['required'] && peliculasForm.get('titulo')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input id="sinopsis" class="form-control" formControlName="sinopsis" maxlength="100" placeholder="Ingrese la Sinopsis" />
+                            <div class="alert alert-danger mt-2" *ngIf="peliculasForm.get('sinopsis')?.errors?.['required'] && peliculasForm.get('sinopsis')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input id="genero" class="form-control" formControlName="genero" maxlength="100" placeholder="Ingrese el Género" />
+                            <div class="alert alert-danger mt-2" *ngIf="peliculasForm.get('genero')?.errors?.['required'] && peliculasForm.get('genero')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input id="director" class="form-control" formControlName="director" maxlength="100" placeholder="Ingrese el Director" />
+                            <div class="alert alert-danger mt-2" *ngIf="peliculasForm.get('director')?.errors?.['required'] && peliculasForm.get('director')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input id="actores" class="form-control" formControlName="actores" maxlength="100" placeholder="Ingrese los Actores" />
+                            <div class="alert alert-danger mt-2" *ngIf="peliculasForm.get('actores')?.errors?.['required'] && peliculasForm.get('actores')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input type="date" id="fecha_estreno" class="form-control" formControlName="fecha_estreno" placeholder="Ingrese la Fecha de Estreno" />
+                            <div class="alert alert-danger mt-2" *ngIf="peliculasForm.get('fecha_estreno')?.errors?.['required'] && peliculasForm.get('fecha_estreno')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2 input-reducido">
+                            <input type="number" id="duracion" class="form-control" formControlName="duracion" maxlength="5" placeholder="Ingrese la Duración" />
+                            <div class="alert alert-danger mt-2" *ngIf="peliculasForm.get('duracion')?.errors?.['required'] && peliculasForm.get('duracion')?.touched">
+                                Campo Requerido
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="text-center">
+                    <button type="submit" class="btn btn-crear" [disabled]="!peliculasForm.valid">Crear</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div id="listar" class="container-fluid">
+  <div class="row justify-content-center">
+      <div class="col-12">
+          <h1 id="titulo">Series</h1>
+      </div>
+  </div>
+  <div class="row justify-content-center">
+      <div class="col-12">
+          <div class="movie-grid">
+              <div *ngFor="let v of series" class="movie-card">
+                  <div class="card-body">
+                    <div class="image-container">
+                        <img [src]="v.url" class="card-img-top" alt="{{ v.titulo }}">
+                    </div>
+                      <h5 class="card-title">{{ v.titulo }}</h5>
+                      <p class="card-text">{{ v.sinopsis }}</p>
+                      <p class="card-text"><strong>Género:</strong> {{ v.genero }}</p>
+                      <button type="button" class="btn btn-primary btn-sm read-more" (click)="toggleInfo(v.id)">Leer más</button>
+                      <div class="extra-info" [attr.id]="'info-' + v.id">
+                          <p><strong>Director:</strong> {{ v.director }}</p>
+                          <p><strong>Actores:</strong> {{ v.actores }}</p>
+                          <p><strong>Fecha de Estreno:</strong> {{ v.fecha_estreno }}</p>
+                          <p><strong>Temporadas:</strong> {{ v.temporada }}</p>
+                          <p><strong>Duración:</strong> {{ v.duracion }}</p>
+                          <div class="button-group">
+                            <button type="button" class="btn btn-primary btn-sm edit-btn" (click)="actualizar(v.id)">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm delete-btn" (click)="eliminar(v.id)">Eliminar</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row justify-content-end">
+      <div class="col-12">
+          <button class="btn btn-primary create-movie-btn" (click)="navigateSerie()">Crear serie</button>
+      </div>
+  </div>
+</div>
